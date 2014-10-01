@@ -77,7 +77,7 @@ module StripAttributes
           value.squeeze!(' ')
         end
 
-        record[attr] = value if original_value != value
+        record.__send__("#{attr}=", value) if original_value != value
       end
   end
 
